@@ -1,0 +1,87 @@
+/************************************************************
+Nombre del programa: Conversor a segundos
+Fecha: 10/10/2026
+Elaboro: Miguel Angel Papalotzi Mendieta
+Descripcion:
+Programa que calcula el numero total de segundos
+a partir de dias, horas, minutos y segundos en C#
+************************************************************/
+
+// Incluimos la biblioteca de entrada y salida
+// Permite utilizar printf y scanf_s
+#include <stdio.h>
+
+// Funcion principal donde inicia el programa
+int main() {
+
+    // Declaramos las variables de tipo long long
+    // Permiten almacenar numeros enteros grandes
+    long long d, h, m, s, T;
+    long long segundosDias, segundosHoras, segundosMinutos;
+
+    // Mostramos el titulo del programa
+    // \n representa un salto de linea
+    printf("====================================\n");
+    printf(" CONVERSION DE TIEMPO A SEGUNDOS\n");
+    printf("====================================\n");
+
+    // Solicitamos la cantidad de dias
+    printf("Ingrese la cantidad de dias: ");
+
+    // scanf_s lee un numero entero desde el teclado
+    // %lld indica que esperamos un entero long long
+    // &d indica la direccion de memoria de la variable
+    scanf_s("%lld", &d);
+
+    // Solicitamos la cantidad de horas
+    printf("Ingrese la cantidad de horas: ");
+    scanf_s("%lld", &h);
+
+    // Solicitamos la cantidad de minutos
+    printf("Ingrese la cantidad de minutos: ");
+    scanf_s("%lld", &m);
+
+    // Solicitamos la cantidad de segundos
+    printf("Ingrese la cantidad de segundos: ");
+    scanf_s("%lld", &s);
+
+    // Convertimos los dias a segundos
+    // Cada dia tiene 86400 segundos
+    segundosDias = d * 86400;
+
+    // Convertimos las horas a segundos
+    // Cada hora tiene 3600 segundos
+    segundosHoras = h * 3600;
+
+    // Convertimos los minutos a segundos
+    // Cada minuto tiene 60 segundos
+    segundosMinutos = m * 60;
+
+    // Sumamos los segundos obtenidos
+    // Formula: T = d*86400 + h*3600 + m*60 + s
+    T = segundosDias + segundosHoras + segundosMinutos + s;
+
+    // Mostramos los datos ingresados
+    printf("\n========== DATOS INGRESADOS ==========\n");
+    printf("Dias: %lld\n", d);
+    printf("Horas: %lld\n", h);
+    printf("Minutos: %lld\n", m);
+    printf("Segundos: %lld\n", s);
+
+    // Mostramos las conversiones realizadas
+    printf("\n========== CONVERSIONES ==========\n");
+    printf("Dias en segundos: %lld\n", segundosDias);
+    printf("Horas en segundos: %lld\n", segundosHoras);
+    printf("Minutos en segundos: %lld\n", segundosMinutos);
+
+    // Mostramos el resultado final
+    printf("\n========== RESULTADO ==========\n");
+    printf("Total de segundos: %lld\n", T);
+
+    // Explicamos el resultado obtenido
+    printf("\nEl tiempo ingresado equivale a ");
+    printf("%lld segundos en total.\n", T);
+
+    // Indicamos que el programa termino correctamente
+    return 0;
+}
