@@ -1,3 +1,12 @@
+/**************************************************************
+Nombre del programa: Ecuación de Movimiento Acelerado Uniforme
+Pseudocodigo
+Elaboro: Miguel Angel Papalotzi Mendieta
+Fecha: 7/10/2026
+Descripcion: Programa que calcula la posicion final de un objeto
+mediante la formula del movimiento uniformemente acelerado
+**************************************************************/
+
 Algoritmo Movimiento_Acelerado
 	// Declaramos las variables que utilizaremos
 	// Todas son reales porque pueden contener decimales
