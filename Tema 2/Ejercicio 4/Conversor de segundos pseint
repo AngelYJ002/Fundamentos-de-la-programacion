@@ -1,0 +1,76 @@
+/*********************************************************************
+Titulo del programa: Convertidor de Dias, horas y minutos a segundos
+Fecha: 10/10/2026
+Elaboro: Miguel Angel Papalotzi Mendieta
+Descripcion: Programa que calcula el numero total de segundos
+a partir de dias, horas, minutos y segundos en pseudocodigo.
+*********************************************************************/
+Algoritmo ConversionDeSegundos	
+    // Declaramos las variables como enteros
+    // Almacenaran dias, horas, minutos y segundos
+    Definir d, h, m, s, T Como Entero
+    Definir segundosDias, segundosHoras, segundosMinutos Como Entero
+	
+    // Mostramos el titulo del programa
+    Escribir "===================================="
+    Escribir " CONVERSION DE TIEMPO A SEGUNDOS"
+    Escribir "===================================="
+	
+    // Solicitamos la cantidad de dias
+    Escribir "Ingrese la cantidad de dias:"
+    Leer d
+	
+    // Solicitamos la cantidad de horas
+    Escribir "Ingrese la cantidad de horas:"
+    Leer h
+	
+    // Solicitamos la cantidad de minutos
+    Escribir "Ingrese la cantidad de minutos:"
+    Leer m
+	
+    // Solicitamos la cantidad de segundos
+    Escribir "Ingrese la cantidad de segundos:"
+    Leer s
+	
+    // Convertimos los dias a segundos
+    // Un dia equivale a 86400 segundos
+    segundosDias <- d * 86400
+	
+    // Convertimos las horas a segundos
+    // Una hora equivale a 3600 segundos
+    segundosHoras <- h * 3600
+	
+    // Convertimos los minutos a segundos
+    // Un minuto equivale a 60 segundos
+    segundosMinutos <- m * 60
+	
+    // Sumamos las conversiones y los segundos
+    // Formula: T = d*86400 + h*3600 + m*60 + s
+    T <- segundosDias + segundosHoras + segundosMinutos + s
+	
+    // Mostramos los datos ingresados
+    Escribir ""
+    Escribir "========== DATOS INGRESADOS =========="
+    Escribir "Dias: ", d
+    Escribir "Horas: ", h
+    Escribir "Minutos: ", m
+    Escribir "Segundos: ", s
+	
+    // Mostramos las conversiones realizadas
+    Escribir ""
+    Escribir "========== CONVERSIONES =========="
+    Escribir "Dias en segundos: ", segundosDias
+    Escribir "Horas en segundos: ", segundosHoras
+    Escribir "Minutos en segundos: ", segundosMinutos
+	
+    // Mostramos el resultado final
+    Escribir ""
+    Escribir "========== RESULTADO =========="
+    Escribir "Total de segundos: ", T
+	
+    // Explicamos el resultado obtenido
+    Escribir ""
+    Escribir "El tiempo ingresado equivale a "
+    Escribir T, " segundos en total."
+	
+FinAlgoritmo
