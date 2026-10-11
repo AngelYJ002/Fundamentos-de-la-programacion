@@ -1,1 +1,96 @@
+/************************************************************
+Nombre del programa: Velocidad de las Olimpiadas de Invierno
+Elaboro: Miguel Angel Papalotzi Mendieta
+Fecha: 11/10/2026
+Descripcion:
+Programa que calcula la velocidad de un participante
+en las olimpiadas de invierno, expresando el resultado
+en metros por segundo y kilometros por hora.
+************************************************************/
 
+Algoritmo Velocidad_Olimpiadas
+	
+    // Declaramos los datos del tiempo como enteros
+    Definir MIN, SEG, CEN Como Entero
+	
+    // Declaramos las variables que pueden tener decimales
+    Definir DIS, TSE, VMS, VKH Como Real
+	
+    // Mostramos el titulo del programa
+    Escribir "========================================"
+    Escribir " VELOCIDAD EN OLIMPIADAS DE INVIERNO"
+    Escribir "========================================"
+	
+    // Solicitamos los minutos registrados
+    Escribir "Ingrese los minutos:"
+    Leer MIN
+	
+    // Solicitamos los segundos registrados
+    Escribir "Ingrese los segundos (0 a 59):"
+    Leer SEG
+	
+    // Solicitamos las centesimas de segundo
+    Escribir "Ingrese las centesimas (0 a 99):"
+    Leer CEN
+	
+    // Solicitamos la distancia recorrida en metros
+    Escribir "Ingrese la distancia recorrida (m):"
+    Leer DIS
+	
+    // Comprobamos que los valores sean validos
+    // Los segundos y centesimas deben estar en su rango
+    // La distancia debe ser mayor que cero
+    Si MIN >= 0 Y SEG >= 0 Y SEG < 60 Y CEN >= 0 Y CEN < 100 Y DIS > 0 Entonces
+		
+        // PASO 1: Convertimos el tiempo total a segundos
+        // Formula: TSE = MIN * 60 + SEG + CEN / 100
+        TSE <- MIN * 60 + SEG + CEN / 100
+		
+        // Verificamos que el tiempo no sea cero
+        // Esto evita errores al calcular la velocidad
+        Si TSE > 0 Entonces
+			
+            // PASO 2: Calculamos la velocidad en m/s
+            // Formula: VMS = DIS / TSE
+            VMS <- DIS / TSE
+			
+            // PASO 3: Convertimos la velocidad a km/h
+            // Formula: VKH = VMS * 3600 / 1000
+            VKH <- VMS * 3600 / 1000
+			
+            // Mostramos los datos ingresados
+            Escribir ""
+            Escribir "========== DATOS INGRESADOS =========="
+            Escribir "Minutos: ", MIN
+            Escribir "Segundos: ", SEG
+            Escribir "Centesimas: ", CEN
+            Escribir "Distancia: ", DIS, " metros"
+			
+            // Mostramos las conversiones y resultados
+            Escribir ""
+            Escribir "========== RESULTADOS =========="
+            Escribir "Tiempo total: ", TSE, " segundos"
+            Escribir "Velocidad en m/s: ", VMS
+            Escribir "Velocidad en km/h: ", VKH
+			
+            // Explicamos el resultado obtenido
+            Escribir ""
+            Escribir "El participante recorrio ", DIS, " metros"
+            Escribir "en un tiempo de ", TSE, " segundos."
+            Escribir "Su velocidad fue de ", VKH, " km/h."
+			
+        SiNo
+			
+            // No se puede dividir entre cero
+            Escribir "ERROR: El tiempo debe ser mayor que cero."
+			
+        FinSi
+		
+    SiNo
+		
+        // Informamos si algun dato no es valido
+        Escribir "ERROR: Los datos ingresados no son validos."
+		
+    FinSi
+	
+FinAlgoritmo
