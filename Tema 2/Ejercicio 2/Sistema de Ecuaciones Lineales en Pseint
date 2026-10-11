@@ -5,7 +5,7 @@ Fecha: 7/10/2026
 Descripcion:
 Programa que resuelve un sistema de dos ecuaciones
 lineales con dos incognitas mediante las formulas
-proporcionadas en el ejercicio.
+proporcionadas en el ejercicio
 ************************************************************/
 
 // Incluimos la biblioteca de entrada y salida
