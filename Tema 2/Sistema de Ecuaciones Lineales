@@ -1,0 +1,118 @@
+/************************************************************
+Nombre del programa: Sistema de Ecuaciones Lineales
+Elaboro: Miguel Angel Papalotzi Mendieta
+Fecha: 10/10/2026
+Descripcion:
+Programa que resuelve un sistema de dos ecuaciones
+lineales con dos incognitas mediante las formulas
+proporcionadas en el ejercicio.
+************************************************************/
+
+// Incluimos la biblioteca de entrada y salida
+// Permite utilizar las funciones printf y scanf_s
+#include <stdio.h>
+
+// Funcion principal donde inicia nuestro programa
+int main() {
+
+    // Declaramos las variables de tipo float
+    // Permiten almacenar numeros con decimales
+    float a, b, c, d, e, f;
+    float x, y, denominador;
+
+    // printf muestra mensajes en la pantalla
+    // \n representa un salto de linea
+    printf("====================================\n");
+    printf(" SISTEMA DE ECUACIONES LINEALES\n");
+    printf("====================================\n");
+
+    // Solicitamos los coeficientes de la primera ecuacion
+    // Primera ecuacion: ax + by = c
+    printf("\nPRIMERA ECUACION: ax + by = c\n");
+
+    // Solicitamos el valor de a
+    printf("Ingrese el valor de a: ");
+
+    // scanf_s lee un numero flotante desde el teclado
+    // %%f indica que esperamos un numero decimal
+    // &a indica la direccion de memoria de la variable a
+    scanf_s("%f", &a);
+
+    // Solicitamos y almacenamos el valor de b
+    printf("Ingrese el valor de b: ");
+    scanf_s("%f", &b);
+
+    // Solicitamos y almacenamos el valor de c
+    printf("Ingrese el valor de c: ");
+    scanf_s("%f", &c);
+
+    // Solicitamos los coeficientes de la segunda ecuacion
+    // Segunda ecuacion: dx + ey = f
+    printf("\nSEGUNDA ECUACION: dx + ey = f\n");
+
+    // Solicitamos y almacenamos el valor de d
+    printf("Ingrese el valor de d: ");
+    scanf_s("%f", &d);
+
+    // Solicitamos y almacenamos el valor de e
+    printf("Ingrese el valor de e: ");
+    scanf_s("%f", &e);
+
+    // Solicitamos y almacenamos el valor de f
+    printf("Ingrese el valor de f: ");
+    scanf_s("%f", &f);
+
+    // Calculamos el denominador comun
+    // Formula: denominador = ae - bd
+    // El simbolo * representa la multiplicacion
+    denominador = a * e - b * d;
+
+    // if evalua si se cumple una condicion
+    // != significa diferente de
+    // Comprobamos que el denominador no sea cero
+    if (denominador != 0) {
+
+        // Calculamos la incognita X
+        // Formula: x = (ce - bf) / (ae - bd)
+        // El simbolo / representa la division
+        x = (c * e - b * f) / denominador;
+
+        // Calculamos la incognita Y
+        // Formula: y = (af - cd) / (ae - bd)
+        y = (a * f - c * d) / denominador;
+
+        // Mostramos los coeficientes ingresados
+        printf("\n========== DATOS INGRESADOS ==========\n");
+
+        // %.2f muestra un numero decimal con dos cifras
+        printf("Valor de a: %.2f\n", a);
+        printf("Valor de b: %.2f\n", b);
+        printf("Valor de c: %.2f\n", c);
+        printf("Valor de d: %.2f\n", d);
+        printf("Valor de e: %.2f\n", e);
+        printf("Valor de f: %.2f\n", f);
+
+        // Mostramos los resultados calculados
+        printf("\n========== RESULTADOS ==========\n");
+        printf("Denominador: %.2f\n", denominador);
+        printf("El valor de X es: %.2f\n", x);
+        printf("El valor de Y es: %.2f\n", y);
+
+        // Explicamos el resultado obtenido
+        printf("\nEl sistema tiene una solucion unica.\n");
+        printf("Los valores de X y Y satisfacen ambas ecuaciones.\n");
+
+    }
+    else {
+
+        // else se ejecuta cuando la condicion de if es falsa
+        // Evitamos una division entre cero
+        printf("\n========== RESULTADOS ==========\n");
+        printf("El denominador es igual a cero.\n");
+        printf("El sistema no tiene una solucion unica.\n");
+        printf("Puede tener infinitas soluciones o ninguna.\n");
+    }
+
+    // return 0 indica que el programa termino correctamente
+    return 0;
+}
