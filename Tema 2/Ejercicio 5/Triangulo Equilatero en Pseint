@@ -1,0 +1,70 @@
+/*********************************************************************
+Titulo del programa: Calculadora de Area, Perimetro y Altura
+de un Triangulo Equilatero
+Fecha: 11/10/2026
+Elaboro: Miguel Angel Papalotzi Mendieta
+Descripcion: Programa que calcula el perimetro, la altura y el
+area de un triangulo equilatero a partir de su lado en Pseudocodigo
+*********************************************************************/
+
+Algoritmo TrianguloEquilatero	
+    // Declaramos las variables de tipo real
+    // Permiten almacenar numeros con decimales
+    Definir L, P, h, A Como Real
+	
+    // Mostramos el titulo del programa
+    Escribir "===================================="
+    Escribir " CALCULOS DEL TRIANGULO EQUILATERO"
+    Escribir "===================================="
+	
+    // Solicitamos la longitud de uno de los lados
+    Escribir "Ingrese la longitud del lado:"
+    Leer L
+	
+    // Verificamos que el lado sea mayor que cero
+    // Un triangulo no puede tener lados negativos o nulos
+    Si L > 0 Entonces
+		
+        // Calculamos el perimetro
+        // Formula: P = 3 * L
+        // Multiplicamos el lado por tres
+        P <- 3 * L
+		
+        // Calculamos la altura del triangulo
+        // Formula: h = (RAIZ(3) / 2) * L
+        // RAIZ permite calcular una raiz cuadrada
+        h <- (RAIZ(3) / 2) * L
+		
+        // Calculamos el area del triangulo
+        // Formula: A = (L * h) / 2
+        // Multiplicamos la base por la altura
+        // y dividimos el resultado entre dos
+        A <- (L * h) / 2
+		
+        // Mostramos el dato ingresado
+        Escribir ""
+        Escribir "========== DATOS INGRESADOS =========="
+        Escribir "Longitud del lado: ", L
+		
+        // Mostramos los resultados calculados
+        Escribir ""
+        Escribir "========== RESULTADOS =========="
+        Escribir "Perimetro: ", P
+        Escribir "Altura: ", h
+        Escribir "Area: ", A
+		
+        // Presentamos una explicacion de los resultados
+        Escribir ""
+        Escribir "El triangulo tiene tres lados iguales."
+        Escribir "Su perimetro es: ", P
+        Escribir "Su altura es: ", h
+        Escribir "Su area es: ", A
+		
+    SiNo
+		
+        // Informamos que el valor ingresado no es valido
+        Escribir "ERROR: La longitud debe ser mayor que cero."
+		
+    FinSi
+	
+FinAlgoritmo
