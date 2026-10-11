@@ -1,3 +1,12 @@
+/************************************************************
+Nombre del programa: Volumen de La Tierra
+Elaboro: Miguel Angel Papalotzi Mendieta
+Fecha: 10/10/2026
+Descripcion:
+Programa que calcula el volumen aproximado de
+la Tierra considerando que es un esferoide.
+************************************************************/
+
 Algoritmo VolumenDeLaTierra
 	// Declaramos las variables de tipo Real
 	// Permiten almacenar numeros con decimales
