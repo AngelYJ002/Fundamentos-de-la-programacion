@@ -1,0 +1,104 @@
+/************************************************************
+Nombre del programa: Pesas miscelanea
+Elaboro: Miguel Angel Papalotzi Mendieta
+Fecha: 11/10/2026
+Descripcion:
+Programa que calcula la cantidad de pesas necesarias
+para equilibrar un peso de hasta 10000 gramos.
+************************************************************/
+
+Algoritmo Pesas_Miscelanea
+
+    // Declaramos las variables de tipo entero
+    Definir peso, restante, total Como Entero
+    Definir p1000, p500, p200, p100, p50 Como Entero
+    Definir p10, p5, p2, p1 Como Entero
+
+    // Mostramos el titulo del programa
+    Escribir "===================================="
+    Escribir " CALCULO DE PESAS PARA UNA BALANZA"
+    Escribir "===================================="
+
+    // Solicitamos el peso que se desea equilibrar
+    Escribir "Ingrese el peso en gramos (1 a 10000):"
+    Leer peso
+
+    // Verificamos que el peso este dentro del limite
+    Si peso >= 1 Y peso <= 10000 Entonces
+
+        // Guardamos el peso original en otra variable
+        restante <- peso
+
+        // Calculamos cuantas pesas de 1000 g necesitamos
+        // TRUNC elimina la parte decimal de la division
+        p1000 <- TRUNC(restante / 1000)
+
+        // MOD calcula los gramos que sobran
+        restante <- restante MOD 1000
+
+        // Calculamos las pesas de 500 g
+        p500 <- TRUNC(restante / 500)
+        restante <- restante MOD 500
+
+        // Calculamos las pesas de 200 g
+        p200 <- TRUNC(restante / 200)
+        restante <- restante MOD 200
+
+        // Calculamos las pesas de 100 g
+        p100 <- TRUNC(restante / 100)
+        restante <- restante MOD 100
+
+        // Calculamos las pesas de 50 g
+        p50 <- TRUNC(restante / 50)
+        restante <- restante MOD 50
+
+        // Calculamos las pesas de 10 g
+        p10 <- TRUNC(restante / 10)
+        restante <- restante MOD 10
+
+        // Calculamos las pesas de 5 g
+        p5 <- TRUNC(restante / 5)
+        restante <- restante MOD 5
+
+        // Calculamos las pesas de 2 g
+        p2 <- TRUNC(restante / 2)
+        restante <- restante MOD 2
+
+        // Calculamos las pesas de 1 g
+        p1 <- TRUNC(restante / 1)
+        restante <- restante MOD 1
+
+        // Sumamos todas las pesas utilizadas
+        total <- p1000 + p500 + p200 + p100 + p50 + p10 + p5 + p2 + p1
+
+        // Mostramos las cantidades calculadas
+        Escribir ""
+        Escribir "========== RESULTADOS =========="
+        Escribir "Peso ingresado: ", peso, " gramos"
+        Escribir "Pesas de 1000 g: ", p1000
+        Escribir "Pesas de 500 g: ", p500
+        Escribir "Pesas de 200 g: ", p200
+        Escribir "Pesas de 100 g: ", p100
+        Escribir "Pesas de 50 g: ", p50
+        Escribir "Pesas de 10 g: ", p10
+        Escribir "Pesas de 5 g: ", p5
+        Escribir "Pesas de 2 g: ", p2
+        Escribir "Pesas de 1 g: ", p1
+
+        // Mostramos el total de pesas
+        Escribir "--------------------------------"
+        Escribir "Total de pesas utilizadas: ", total
+        Escribir "Peso restante: ", restante, " gramos"
+
+        // Explicamos el resultado
+        Escribir "La combinacion de pesas permite"
+        Escribir "equilibrar los ", peso, " gramos."
+
+    SiNo
+
+        // Informamos que el peso no es valido
+        Escribir "ERROR: Ingrese un peso entre 1 y 10000 gramos."
+
+    FinSi
+
+FinAlgoritmo
