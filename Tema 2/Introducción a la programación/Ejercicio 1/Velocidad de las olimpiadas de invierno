@@ -1,0 +1,106 @@
+/************************************************************
+Nombre del programa: Velocidad de las Olimpiadas de Invierno
+Elaboro: Miguel Angel Papalotzi Mendieta
+Fecha: 11/10/2026
+Descripcion:
+Programa que calcula la velocidad de un participante
+en las olimpiadas de invierno, expresando el resultado
+en metros por segundo y kilometros por hora.
+************************************************************/
+// Incluimos la biblioteca de entrada y salida
+// Permite utilizar las funciones printf y scanf_s
+#include <stdio.h>
+
+// Funcion principal donde inicia nuestro programa
+int main() {
+
+    // Declaramos las variables enteras para el tiempo
+    int MIN, SEG, CEN;
+
+    // Declaramos las variables de tipo double
+    // Permiten almacenar valores con decimales
+    double DIS, TSE, VMS, VKH;
+
+    // Mostramos el titulo del programa
+    // \n representa un salto de linea
+    printf("========================================\n");
+    printf(" VELOCIDAD EN OLIMPIADAS DE INVIERNO\n");
+    printf("========================================\n");
+
+    // Solicitamos la cantidad de minutos
+    printf("Ingrese los minutos: ");
+
+    // scanf_s permite leer valores desde el teclado
+    // %d indica que esperamos un numero entero
+    // &MIN indica la direccion de memoria de la variable
+    if (scanf_s("%d", &MIN) != 1) return 1;
+
+    // Solicitamos los segundos
+    printf("Ingrese los segundos (0 a 59): ");
+    if (scanf_s("%d", &SEG) != 1) return 1;
+
+    // Solicitamos las centesimas de segundo
+    printf("Ingrese las centesimas (0 a 99): ");
+    if (scanf_s("%d", &CEN) != 1) return 1;
+
+    // Solicitamos la distancia recorrida
+    // %lf permite leer un numero de tipo double
+    printf("Ingrese la distancia recorrida (m): ");
+    if (scanf_s("%lf", &DIS) != 1) return 1;
+
+    // Verificamos que los valores sean validos
+    // && significa que todas las condiciones deben cumplirse
+    // || significa que basta con una condicion verdadera
+    if (MIN < 0 || SEG < 0 || SEG >= 60 ||
+        CEN < 0 || CEN >= 100 || DIS <= 0) {
+
+        // Mostramos un mensaje si los datos son incorrectos
+        printf("\nERROR: Los datos ingresados no son validos.\n");
+        return 1;
+    }
+
+    // PASO 1: Convertimos el tiempo a segundos
+    // Formula: TSE = MIN * 60 + SEG + CEN / 100
+    // 100.0 permite realizar una division decimal
+    TSE = MIN * 60.0 + SEG + CEN / 100.0;
+
+    // Verificamos que el tiempo sea mayor que cero
+    // Evitamos dividir entre cero
+    if (TSE <= 0) {
+
+        printf("\nERROR: El tiempo debe ser mayor que cero.\n");
+        return 1;
+    }
+
+    // PASO 2: Calculamos la velocidad en m/s
+    // Dividimos la distancia entre el tiempo total
+    // Formula: VMS = DIS / TSE
+    VMS = DIS / TSE;
+
+    // PASO 3: Convertimos la velocidad a km/h
+    // Formula: VKH = VMS * 3600 / 1000
+    VKH = VMS * 3600.0 / 1000.0;
+
+    // Mostramos los datos ingresados
+    printf("\n========== DATOS INGRESADOS ==========\n");
+    printf("Minutos: %d\n", MIN);
+    printf("Segundos: %d\n", SEG);
+    printf("Centesimas: %d\n", CEN);
+
+    // %.2f muestra un numero con dos decimales
+    printf("Distancia: %.2f metros\n", DIS);
+
+    // Mostramos los resultados calculados
+    printf("\n========== RESULTADOS ==========\n");
+    printf("Tiempo total: %.2f segundos\n", TSE);
+    printf("Velocidad en m/s: %.2f\n", VMS);
+    printf("Velocidad en km/h: %.2f\n", VKH);
+
+    // Presentamos una explicacion del resultado
+    printf("\nEl participante recorrio %.2f metros\n", DIS);
+    printf("en un tiempo de %.2f segundos.\n", TSE);
+    printf("Su velocidad fue de %.2f km/h.\n", VKH);
+
+    // Finalizamos correctamente el programa
+    return 0;
+}
