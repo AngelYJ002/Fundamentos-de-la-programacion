@@ -1,0 +1,90 @@
+/*********************************************************************
+Titulo del programa: Calculadora de Area, Perimetro y Altura
+de un Triangulo Equilatero
+Fecha: 11/10/2026
+Elaboro: Miguel Angel Papalotzi Mendieta
+Descripcion: Programa que calcula el perimetro, la altura y el
+area de un triangulo equilatero a partir de su lado en C#
+*********************************************************************/
+
+// Incluimos la biblioteca de entrada y salida
+// Permite utilizar printf y scanf_s
+#include <stdio.h>
+
+// Incluimos la biblioteca matematica
+// Permite utilizar sqrt para calcular raices cuadradas
+#include <math.h>
+
+// Funcion principal donde comienza el programa
+int main() {
+
+    // Declaramos las variables de tipo double
+    // Permiten almacenar numeros con decimales
+    double L, P, h, A;
+
+    // Mostramos el titulo del programa
+    // \n representa un salto de linea
+    printf("====================================\n");
+    printf(" CALCULOS DEL TRIANGULO EQUILATERO\n");
+    printf("====================================\n");
+
+    // Solicitamos la longitud del lado
+    printf("Ingrese la longitud del lado: ");
+
+    // scanf_s lee el numero ingresado desde el teclado
+    // %lf indica que se espera un numero tipo double
+    // &L indica la direccion de memoria de la variable
+    if (scanf_s("%lf", &L) != 1) {
+
+        // Mostramos un error si no se introduce un numero
+        printf("ERROR: Debe ingresar un numero valido.\n");
+        return 1;
+    }
+
+    // if comprueba que el lado sea mayor que cero
+    // El simbolo > significa mayor que
+    if (L > 0) {
+
+        // Calculamos el perimetro del triangulo
+        // Formula: P = 3 * L
+        P = 3 * L;
+
+        // Calculamos la altura del triangulo
+        // Formula: h = (raiz de 3 / 2) * L
+        // sqrt(3.0) calcula la raiz cuadrada de 3
+        h = (sqrt(3.0) / 2.0) * L;
+
+        // Calculamos el area del triangulo
+        // Formula: A = (L * h) / 2
+        A = (L * h) / 2.0;
+
+        // Mostramos el dato ingresado
+        printf("\n========== DATOS INGRESADOS ==========\n");
+
+        // %.2f muestra el numero con dos decimales
+        printf("Longitud del lado: %.2f\n", L);
+
+        // Mostramos los resultados calculados
+        printf("\n========== RESULTADOS ==========\n");
+
+        printf("Perimetro: %.2f\n", P);
+        printf("Altura: %.2f\n", h);
+        printf("Area: %.2f\n", A);
+
+        // Explicamos el resultado obtenido
+        printf("\nEl triangulo tiene tres lados iguales.\n");
+        printf("Su perimetro es: %.2f\n", P);
+        printf("Su altura es: %.2f\n", h);
+        printf("Su area es: %.2f\n", A);
+
+    }
+    else {
+
+        // else se ejecuta si el lado no es positivo
+        // Evitamos calcular un triangulo invalido
+        printf("\nERROR: El lado debe ser mayor que cero.\n");
+    }
+
+    // Finalizamos correctamente el programa
+    return 0;
+}
