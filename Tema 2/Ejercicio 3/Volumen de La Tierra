@@ -1,0 +1,67 @@
+/************************************************************
+Nombre del programa: Volumen de La Tierra
+Elaboro: Miguel Angel Papalotzi Mendieta
+Fecha: 10/10/2026
+Descripcion:
+Programa que calcula el volumen aproximado de
+la Tierra considerando que es un esferoide.
+************************************************************/
+
+// Incluimos la biblioteca de entrada y salida
+// Permite utilizar la funcion printf
+#include <stdio.h>
+
+// Funcion principal donde inicia el programa
+int main() {
+
+    // Declaramos las variables de tipo double
+    // Permiten almacenar numeros decimales
+    // con mayor precision que float
+    double a, b, pi, V;
+
+    // Mostramos el titulo del programa
+    // \n representa un salto de linea
+    printf("========================================\n");
+    printf(" CALCULO DEL VOLUMEN DE LA TIERRA\n");
+    printf("========================================\n");
+
+    // Asignamos el radio ecuatorial en kilometros
+    a = 6378.137;
+
+    // Asignamos el radio polar en kilometros
+    b = 6356.752;
+
+    // Asignamos el valor de la constante PI
+    pi = 3.141592653589793;
+
+    // Calculamos el volumen de la Tierra
+    // Formula: V = (4/3) * pi * a^2 * b
+    // El simbolo * representa la multiplicacion
+    // En C utilizamos a * a para elevar al cuadrado
+    // 4.0 / 3.0 permite una division decimal
+    V = (4.0 / 3.0) * pi * a * a * b;
+
+    // Mostramos los datos utilizados
+    printf("\n========== DATOS UTILIZADOS ==========\n");
+
+    // %.3f muestra tres cifras decimales
+    printf("Radio ecuatorial: %.3f km\n", a);
+    printf("Radio polar: %.3f km\n", b);
+
+    // %.6f muestra seis cifras decimales
+    printf("Constante PI: %.6f\n", pi);
+
+    // Mostramos el volumen calculado
+    // %.2f muestra dos cifras decimales
+    printf("\n========== RESULTADOS ==========\n");
+    printf("Volumen de la Tierra: %.2f km3\n", V);
+
+    // Presentamos una explicacion del resultado
+    printf("\nEl volumen aproximado de la Tierra\n");
+    printf("se calculo considerando su forma\n");
+    printf("de esferoide y utilizando sus radios\n");
+    printf("ecuatorial y polar.\n");
+
+    // Finalizamos correctamente el programa
+    return 0;
+}
