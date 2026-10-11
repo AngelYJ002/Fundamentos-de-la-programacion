@@ -3,3 +3,113 @@ Nombre del programa: Pesas miscelanea
 Elaboro: Miguel Angel Papalotzi Mendieta
 Fecha: 11/10/2026
 Descripcion:
+Programa que calcula la cantidad de pesas necesarias
+para equilibrar un peso de hasta 10000 gramos.
+************************************************************/
+
+// Incluimos la biblioteca de entrada y salida
+// Permite utilizar printf y scanf_s
+#include <stdio.h>
+
+// Funcion principal del programa
+int main() {
+
+    // Declaramos las variables de tipo entero
+    int peso, restante, total;
+    int p1000, p500, p200, p100, p50;
+    int p10, p5, p2, p1;
+
+    // Mostramos el titulo
+    printf("====================================\n");
+    printf(" CALCULO DE PESAS PARA UNA BALANZA\n");
+    printf("====================================\n");
+
+    // Solicitamos el peso al usuario
+    printf("Ingrese el peso en gramos (1 a 10000): ");
+
+    // scanf_s lee un numero entero desde el teclado
+    // %d indica un entero y &peso su direccion en memoria
+    if (scanf_s("%d", &peso) != 1) {
+        printf("ERROR: Debe ingresar un numero entero.\n");
+        return 1;
+    }
+
+    // Validamos el rango permitido
+    // || significa que basta con cumplir una condicion
+    if (peso < 1 || peso > 10000) {
+        printf("ERROR: El peso debe estar entre 1 y 10000.\n");
+        return 1;
+    }
+
+    // Guardamos el peso para realizar los calculos
+    restante = peso;
+
+    // Calculamos las pesas de 1000 gramos
+    // La division entre enteros obtiene pesas completas
+    p1000 = restante / 1000;
+
+    // El operador % devuelve el residuo de la division
+    restante = restante % 1000;
+
+    // Calculamos las pesas de 500 gramos
+    p500 = restante / 500;
+    restante = restante % 500;
+
+    // Calculamos las pesas de 200 gramos
+    p200 = restante / 200;
+    restante = restante % 200;
+
+    // Calculamos las pesas de 100 gramos
+    p100 = restante / 100;
+    restante = restante % 100;
+
+    // Calculamos las pesas de 50 gramos
+    p50 = restante / 50;
+    restante = restante % 50;
+
+    // Calculamos las pesas de 10 gramos
+    p10 = restante / 10;
+    restante = restante % 10;
+
+    // Calculamos las pesas de 5 gramos
+    p5 = restante / 5;
+    restante = restante % 5;
+
+    // Calculamos las pesas de 2 gramos
+    p2 = restante / 2;
+    restante = restante % 2;
+
+    // Calculamos las pesas de 1 gramo
+    p1 = restante / 1;
+    restante = restante % 1;
+
+    // Sumamos todas las pesas utilizadas
+    total = p1000 + p500 + p200 + p100 + p50
+          + p10 + p5 + p2 + p1;
+
+    // Mostramos los resultados
+    printf("\n========== RESULTADOS ==========\n");
+    printf("Peso ingresado: %d gramos\n", peso);
+
+    printf("Pesas de 1000 g: %d\n", p1000);
+    printf("Pesas de 500 g: %d\n", p500);
+    printf("Pesas de 200 g: %d\n", p200);
+    printf("Pesas de 100 g: %d\n", p100);
+    printf("Pesas de 50 g: %d\n", p50);
+    printf("Pesas de 10 g: %d\n", p10);
+    printf("Pesas de 5 g: %d\n", p5);
+    printf("Pesas de 2 g: %d\n", p2);
+    printf("Pesas de 1 g: %d\n", p1);
+
+    // Mostramos el total utilizado
+    printf("--------------------------------\n");
+    printf("Total de pesas: %d\n", total);
+    printf("Peso restante: %d gramos\n", restante);
+
+    // Explicamos el resultado
+    printf("\nSe necesitan %d pesas para equilibrar ", total);
+    printf("los %d gramos.\n", peso);
+
+    // Finalizamos correctamente
+    return 0;
+}
