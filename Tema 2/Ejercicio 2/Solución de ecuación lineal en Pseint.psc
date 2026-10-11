@@ -1,4 +1,14 @@
-Algoritmo Sistema_Ecuaciones_Lineales
+/************************************************************
+Nombre del programa: Sistema de Ecuaciones Lineales
+Elaboro: Miguel Angel Papalotzi Mendieta
+Fecha: 7/10/2026
+Descripcion:
+Programa que resuelve un sistema de dos ecuaciones
+lineales con dos incognitas mediante las formulas
+proporcionadas en el ejercicio.
+************************************************************/
+
+Algoritmo SistemaEcuacionesLineales
     // Declaramos las variables necesarias
     // Utilizamos reales para permitir decimales
     Definir a, b, c, d, e, f Como Real
